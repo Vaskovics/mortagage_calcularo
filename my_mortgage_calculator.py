@@ -1,20 +1,15 @@
 name = input("Please enter you name: ")
+def get_number(prompt):
+    while True:
+        try:
+            number = float(input(prompt))
+            return number
+        except ValueError:
+            print("Invalid number been entered, please try again: ")
 
-while True:
-    loan = input('Please enter amount of you mortgage: ')
-    if loan.isdigit():
-        break
-while True:
-    period = input('Please enter perion in month: ')
-    if period.isdigit():
-        break
-while True:
-    try:
-        interest = (float(input('What is your interest Rate?: ')))
-        break
-    except ValueError:
-        interest = (float(input('What is your interest Rate?: ')))
-
+loan = get_number("Please enter amount of you mortgage: ")
+period = get_number("Please enter perion in month: ")
+interest = get_number("What is your interest Rate: ")
 
 loan = float(loan)
 period = int(period)
@@ -23,7 +18,6 @@ interest = float(interest)
 interest = float(interest)/100/12
 
 monthly_payments = loan * (interest * (1 + interest) ** period) / ((1 + interest) ** period - 1)
-# print(monthly_payments)
 
 sum_mont_percent = 0
 principal = 0
