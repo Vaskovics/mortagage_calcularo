@@ -1,7 +1,7 @@
 suma = 0
 while True:
 
-    hours = float(input("Please eneter amount of hours: "))
+    hours = float(input("Please eneter amount of hours or '0' to exit: "))
     if hours == 0:
         break
     rate = float(input("Plese eneter the rate: "))
