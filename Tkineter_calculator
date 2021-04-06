@@ -1,0 +1,67 @@
+import tkinter
+
+mainWindow = tkinter.Tk()
+mainWindow.title('Calculator')
+mainWindow.geometry('320x480')
+
+#Calculator window
+
+result = tkinter.Entry(mainWindow)
+result.grid(row=0, column=0, sticky='nsew')
+#Створення кнопок
+
+keyPad = tkinter.Frame(mainWindow)
+keyPad.grid(row=1, column=0, sticky='nsew')
+
+cButton = tkinter.Button(keyPad, text='C', width=5)
+cButton.grid(row=1, column=0, sticky='w')
+
+
+ceButton = tkinter.Button(keyPad, text='CE', width=5)
+ceButton.grid(row=1, column=1, sticky='e')
+
+
+sevenButton = tkinter.Button(keyPad, text='7',width=5)
+sevenButton.grid(row=2, column=0, )
+
+eightButton = tkinter.Button(keyPad, text='8', width=5)
+eightButton.grid(row=2, column=1)
+
+nineButton = tkinter.Button(keyPad, text='9', width=5)
+nineButton.grid(row=2, column=2)
+
+plusButton = tkinter.Button(keyPad, text='+', width=5)
+plusButton.grid(row=2, column=3)
+
+fourButton = tkinter.Button(keyPad, text='4', width=5)
+fourButton.grid(row=3, column=0)
+
+fiveButton = tkinter.Button(keyPad, text='5', width=5)
+fiveButton.grid(row=3, column=1)
+
+sixButton = tkinter.Button(keyPad, text='6', width=5)
+sixButton.grid(row=3, column=2)
+
+minusButton= tkinter.Button(keyPad, text='-', width=5)
+minusButton.grid(row=3, column=3)
+
+oneButton = tkinter.Button(keyPad, text='1', width=5)
+oneButton.grid(row=4,column=0)
+
+twoButton = tkinter.Button(keyPad, text='2', width=5)
+twoButton.grid(row=4, column=1)
+
+threeButton = tkinter.Button(keyPad, text='3', width=5)
+threeButton.grid(row=4, column=2)
+
+multiplyButton = tkinter.Button(keyPad, text="*", width=5)
+multiplyButton.grid(row=4, column=3)
+
+zeroButton = tkinter.Button(keyPad, text='0', width=5)
+zeroButton.grid(row=5, column=0)
+
+equalButton = tkinter.Button(keyPad, text='=', width=12)
+equalButton.grid(row=5, column=1, columnspan=2)
+
+divedButton = tkinter.Button(keyPad, text="/", width=5)
+divedButton.grid(row=5, column=3)
