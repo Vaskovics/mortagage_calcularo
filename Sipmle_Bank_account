@@ -1,0 +1,80 @@
+import datetime
+import pytz
+
+
+class Account:
+    ''' Simple account class with balance'''
+
+    @staticmethod
+    def _current_time():
+        utc_time = datetime.datetime.utcnow()
+        return pytz.utc.localize(utc_time)
+
+    def __init__(self, name, balance):
+        self.name = name
+        self.balane = balance
+        self.transaction_list = [(Account._current_time(), balance)]
+        print('Account created for ' + self.name)
+        self.show_balance()
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balane += amount
+            self.show_balance()
+            self.transaction_list.append((Account._current_time(), amount))
+
+    def withdraw(self, amount):
+        if 0 < amount <= self.balane:
+            self.balane -= amount
+            self.transaction_list.append((Account._current_time(), -amount))
+        else:
+            print('The amount must be greater than zero and no more then your account balance')
+        self.show_balance()
+
+    def show_balance(self):
+        print(f'Balance is {self.balane}')
+
+    def show_transactions(self):
+        for date, amount in self.transaction_list:
+            if amount > 0:
+                tran_type = 'deposited'
+            else:
+                tran_type = 'withdrawn'
+                amount *= -1
+            print('{} {:6} {} on {} (local time was {})'.format(self.name ,amount, tran_type, date, date.astimezone()))
+
+
+if __name__ == '__main__':
+    Viktor = Account('Viktor Vaskovics', 0)
+    Viktor.deposit(4000)
+    Viktor.show_balance()
+    Viktor.withdraw(150)
+
+
+Sveta = Account('Sveta Dobrunik', 100)
+
+
+
+print('*'*100)
+
+Viktor.deposit(10000)
+Viktor.withdraw(3850)
+Viktor.withdraw(11000)
+Viktor.withdraw(500)
+Viktor.show_transactions()
+print('-' * 100)
+Sveta.deposit(1000)
+Sveta.withdraw(1050)
+Sveta.show_transactions()
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
