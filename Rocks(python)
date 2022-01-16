@@ -1,0 +1,29 @@
+import random
+
+choice = ['rock', 'scissors', 'paper']
+computer_choice = random.choice(choice)
+user_choice = 'rock'.lower()
+
+print(f"User choice: {user_choice}")
+print(f"User choice: {computer_choice}")
+
+
+def play_game(uc, cc):
+    if uc == cc:
+        return 'Tie!'
+    else:
+        if uc == 'rock' and cc == 'scissors':
+            return 'User won!'
+        elif uc == 'rock' and cc == 'paper':
+            return "Computer won!"
+        elif uc == 'paper' and cc == 'scissors':
+            return "Computer won!"
+        elif uc == 'paper' and cc == 'rock':
+            return "User won!"
+        elif uc == 'scissors' and cc == 'paper':
+            return "User won!"
+        elif uc == 'scissors' and cc == 'rock':
+            return "Computer won!"
+
+
+print(play_game(user_choice, computer_choice))
