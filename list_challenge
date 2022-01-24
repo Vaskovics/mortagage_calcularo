@@ -1,0 +1,24 @@
+height = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+
+result = {
+    "start": 0,
+    "end": 0,
+    "sq": 0
+    }
+
+for index, value in enumerate(height):
+    for index1, value1 in enumerate(height):
+        if index >= index1:
+            continue
+        else:
+            if value > value1:
+                square = value1 * (index1 - index) 
+            else:
+                square = value * (index1 - index)
+            print(square)
+        if square > result["sq"]:
+            result["start"] = index
+            result["end"] = index1
+            result["sq"] = square
+        
+print(f"Biggest square has index {result['start']} and {result['end']} with square {result['sq']}")
