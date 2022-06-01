@@ -21,8 +21,8 @@ for key, value in result.items():
     print(key, value)
 print(len(result))
 
-me_email = "v.vaskovics@gmail.com"
-password = "Vitya2010"
+me_email = "************"
+password = "***********"
 
 contact = {
     "Viktor": "vasha2020@gmail.com",
@@ -35,8 +35,7 @@ contact = {
     "Maks": "maks@gmail.com"
 }
 
-me_email = "v.vaskovics@gmail.com"
-password = "Vitya2010"
+
 
 connection = smtplib.SMTP("smtp.gmail.com")
 connection.starttls()
